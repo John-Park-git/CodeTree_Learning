@@ -25,7 +25,7 @@ public class Main {
         else if(o=='*') 
             product(a,o,c);
     
-        else if(o=='+') 
+        else if(o=='/') 
             divide(a,o,c);
     }
     public static void main(String[] args) {
