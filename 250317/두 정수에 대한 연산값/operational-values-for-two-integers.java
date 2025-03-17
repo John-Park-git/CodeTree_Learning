@@ -19,7 +19,9 @@ public class Main {
         Num num1 = new Num(a);
         Num num2 = new Num(b);
         modify(num1,num2);
-        System.out.println(num1.num + " " + num2.num);
+        a = num1.num;
+        b = num2.num;
+        System.out.println(a + " " + b);
     }
 }
 class Num {
