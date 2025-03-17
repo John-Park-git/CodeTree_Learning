@@ -7,10 +7,12 @@ public class Main {
         for(int i=0;i<text.length();i++) {
             if(i<text.length()-1) {
                 for(int j=0;j<pattern.length();j++) {
-                    if(text.charAt(i+j)!=pattern.charAt(j))
-                        chk=-1;
-                    else
-                        chk=i;
+                    if(i+j<text.length()-1) {
+                        if(text.charAt(i+j)!=pattern.charAt(j))
+                            chk=-1;
+                        else
+                            chk=i;
+                    }
                 }
             }
         }
