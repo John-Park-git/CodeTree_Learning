@@ -3,7 +3,7 @@ public class Main {
     public static String text, pattern;
 
     public static int findIndex() {
-        int chk=-1;
+        int chk=0;
         for(int i=0;i<text.length();i++) {
             if(i<text.length()-1) {
                 for(int j=0;j<pattern.length();j++) {
