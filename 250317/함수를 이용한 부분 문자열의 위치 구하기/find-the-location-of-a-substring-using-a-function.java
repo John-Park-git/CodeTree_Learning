@@ -2,21 +2,23 @@ import java.util.Scanner;
 public class Main {
     public static String text, pattern;
 
-    public static int findIndex() {
-        int chk=0;
-        for(int i=0;i<text.length();i++) {
-            if(i<text.length()-1) {
-                for(int j=0;j<pattern.length();j++) {
-                    if(i+j<text.length()-1) {
-                        if(text.charAt(i+j)!=pattern.charAt(j))
-                            chk=-1;
-                        else
-                            chk=i;
-                    }
-                }
-            }
+    public static boolean check(int i) {
+        if((i+pattern.length()-1)>=text.length())
+            return false;
+        for(int j=0;j<pattern.length();j++) {
+            if(text.charAt(i+j)!=pattern.charAt(j))
+                return false;
         }
-        return chk;
+        return true;
+
+    }
+    public static int findIndex() {
+        for(int i=0;i<text.length();i++) {
+            if(check(i))
+                return i;
+        }
+        return -1;
+        
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
