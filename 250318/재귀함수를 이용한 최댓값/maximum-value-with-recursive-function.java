@@ -1,6 +1,8 @@
 import java.util.Scanner;
 public class Main {
     public static int Max(int[]arr, int n) {
+        if(n==1)
+            return arr[0];
         if(n==2)    
             return arr[1]>arr[0]?arr[1]:arr[0];
         if(arr[n-1]>arr[n-2]) {
@@ -9,9 +11,7 @@ public class Main {
             arr[n-1]=arr[n-2];
             return Max(arr,n-1);
         }
-        else {
-            return Max(arr,n-1);
-        }
+        return Max(arr,n-1);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
