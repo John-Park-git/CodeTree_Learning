@@ -1,24 +1,20 @@
 import java.util.Scanner;
 public class Main {
-    public static int num=0;
-    public static void recursion(int n) {
+    public static int recursion(int n) {
         if(n==1) {
-            return;
+            return 0;
         }
         else if(n%2==0) {
-            num++;
-            recursion(n/2);
+            return recursion(n/2) + 1;
         }
-        else if(n%2!=0) {
-            num++;
-            recursion(n/3);
+        else {
+            return recursion(n/3)+1;
         }
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         // Please write your code here.
-        recursion(n);
-        System.out.println(num);
+        System.out.println(recursion(n));
     }
 }
