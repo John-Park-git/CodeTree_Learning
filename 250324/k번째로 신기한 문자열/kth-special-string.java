@@ -19,6 +19,8 @@ public class Main {
             char[] test2 = t.toCharArray();
             int check=0;
             for(int j=0;j<test2.length;j++) {
+                if(test.length<test2.length)
+                    break;
                 if(test2[j]==test[j]) {
                     ++check;
                     if(check==test2.length) {
