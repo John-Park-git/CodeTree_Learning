@@ -12,12 +12,20 @@ public class Main {
         }
         // Please write your code here.
         String[] friend = new String[n];
-
         int f=0;
+
         for(int i=0;i<n;i++) {
-            if(words[i].contains(t)) {
-                friend[f]=words[i];
-                f++;
+            char[] test = words[i].toCharArray();
+            char[] test2 = t.toCharArray();
+            int check=0;
+            for(int j=0;j<test2.length;j++) {
+                if(test2[j]==test[j]) {
+                    ++check;
+                    if(check==test2.length) {
+                        friend[f] = words[i];
+                        ++f;
+                    }
+                }
             }
         }
         String[] cpFriend = Arrays.copyOf(friend, f);
