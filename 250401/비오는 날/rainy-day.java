@@ -22,7 +22,7 @@ public class Main {
             // Please write your code here.
             data[i] = new Weather(date, day, weather);
         }
-        Arrays.sort(data, (a,b) -> a.date.compareTo(b.date));
+        Arrays.sort(data, (a,b) -> a.date.compareTo(b.date)); //중요
 
         
         for(int i=0;i<n;i++) {
