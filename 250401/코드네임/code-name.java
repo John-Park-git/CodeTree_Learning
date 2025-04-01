@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 class Agent {
     public String name="";
     public int score=0;
@@ -18,14 +18,8 @@ public class Main {
             int score = sc.nextInt();
             arr[i] = new Agent(name, score);
         }
-        for(int i=0;i<4;i++) {
-            if(arr[i].score < arr[i+1].score) {
-                Agent temp = arr[i];
-                arr[i] = arr[i+1];
-                arr[i+1] = temp; 
-            }
-        }
-        System.out.println(arr[4].name+" "+arr[4].score);
+        Arrays.sort(arr, (a,b) -> Integer.compare(a.score , b.score));
+        System.out.println(arr[0].name+" "+arr[0].score);
 
 
         
