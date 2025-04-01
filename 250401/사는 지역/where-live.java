@@ -17,29 +17,15 @@ public class Main {
         String[] names = new String[n];
         String[] addresses = new String[n];
         String[] regions = new String[n];
+        Infor[] info = new Infor[n];
         for (int i = 0; i < n; i++) {
             names[i] = sc.next();
             addresses[i] = sc.next();
             regions[i] = sc.next();
-        }
-        // Please write your code here.
-        for(int i=0;i<n-1;i++) {
-            if(names[i].compareTo(names[i+1])>0) {
-                String temp1 = names[i];
-                names[i] = names[i+1];
-                names[i+1] = temp1;
-                String temp2 = addresses[i];
-                addresses[i] = addresses[i+1];
-                addresses[i+1] = temp2;
-                String temp3 = regions[i];
-                regions[i] = regions[i+1];
-                regions[i+1] = temp3;
-            }
-        }
-        Infor[] info = new Infor[n];
-        for (int i = 0; i < n; i++) {
             info[i] = new Infor(names[i],addresses[i],regions[i]);
         }
+        Arrays.sort(info, (a,b)->a.name.compareTo(b.name));
+        // Please write your code here.        
         System.out.println("name " + info[n-1].name);
         System.out.println("addr " + info[n-1].address);
         System.out.println("city " + info[n-1].region);
