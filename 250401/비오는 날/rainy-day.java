@@ -22,27 +22,9 @@ public class Main {
             // Please write your code here.
             data[i] = new Weather(date, day, weather);
         }
-        for(int i=0;i<n-1;i++) {
-            if(Integer.parseInt((data[i].date.substring(0,4)))>Integer.parseInt((data[i+1].date.substring(0,4)))) {
-                Weather temp = data[i];
-                data[i] = data[i+1];
-                data[i+1] = temp;
-            }
-            else if(Integer.parseInt((data[i].date.substring(0,4)))==Integer.parseInt((data[i+1].date.substring(0,4)))) {
-                if(Integer.parseInt((data[i].date.substring(5,7)))>Integer.parseInt((data[i+1].date.substring(5,7)))) {
-                    Weather temp = data[i];
-                    data[i] = data[i+1];
-                    data[i+1] = temp;
-                }
-                else if(Integer.parseInt((data[i].date.substring(5,7)))==Integer.parseInt((data[i+1].date.substring(5,7)))) {
-                    if(Integer.parseInt((data[i].date.substring(8)))>Integer.parseInt((data[i+1].date.substring(8)))) {
-                        Weather temp = data[i];
-                        data[i] = data[i+1];
-                        data[i+1] = temp;
-                    }
-                }
-            }
-        }
+        Arrays.sort(data, (a,b) -> a.date.compareTo(b.date));
+
+        
         for(int i=0;i<n;i++) {
             if(data[i].weather.equals("Rain")) {
                 System.out.println(data[i].date + " " + data[i].day + " " + data[i].weather);
